@@ -1,8 +1,8 @@
-const express = require('express');
-const authMiddleware = require('../middlewares/auth');
+import express from 'express';
+import authMiddleware from '../middlewares/auth';
 
-const Project = require('../models/Project');
-const Task = require('../models/Task');
+import Project from '../models/Project';
+import Task from '../models/Task';
 
 const router = express.Router();
 
@@ -95,5 +95,4 @@ router.delete('/:projectId', async (req, res) => {
     }
 });
 
-
-module.exports = app => app.use('/projects', router);
+export default (app) => app.use('/projects', router);

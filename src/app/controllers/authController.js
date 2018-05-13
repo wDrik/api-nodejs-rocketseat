@@ -1,13 +1,13 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const crypto = require('crypto');
-const mailer = require('../../modules/mailer');
+import express from 'express';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import crypto from 'crypto';
+import mailer from '../../modules/mailer';
 
 
-const authConfig = require('../../config/auth.json');
+import authConfig from '../../config/auth.json';
 
-const User = require('../models/User');
+import User from '../models/User';
 
 const router = express.Router();
 
@@ -148,4 +148,4 @@ router.post('/reset_password', async (req, res) => {
     }
 });
 
-module.exports = app => app.use('/auth', router);
+export default (app) => app.use('/auth', router);
