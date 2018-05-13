@@ -17,6 +17,7 @@ function generateToken(params = {}) {
     })
 }
 
+//--> Register
 router.post('/register', async (req, res) => {
     const { email } = req.body;
 
@@ -42,6 +43,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
+//--> Authenticate
 router.post('/authenticate', async (req, res) => {
     const { email, password } = req.body;
 
@@ -65,9 +67,9 @@ router.post('/authenticate', async (req, res) => {
             id: user.id
         }) 
     });
-        
 });
 
+//--> Forgot password
 router.post('/forgot_password', async (req, res) => {
     const { email } = req.body;
 
@@ -112,6 +114,7 @@ router.post('/forgot_password', async (req, res) => {
     }
 });
 
+//--> Reset password
 router.post('/reset_password', async (req, res) => {
     const { email, token, password } = req.body;
 
